@@ -1,5 +1,5 @@
 var url = 'https://codeforces.com/api/user.info?handles=';
-var card = '<td class="*"><img src="*" class="user-img"></td><td class="*"><a href="*" class="rated-user *">*</a><p class="user-rating">Рейтиг: <span class="user-rating-val *">*</span></p></td>'
+var card = '<td class="*"><a href="*"><img src="*" class="user-img"></a></td><td class="*"><a href="*" class="rated-user *">*</a><p class="user-rating">Рейтиг: <span class="user-rating-val *">*</span></p></td>'
 
 var users = []
 
@@ -15,6 +15,7 @@ function parseUsers(xhr) {
         if (ind % 2) user_card = card.replace('*', "");
         else user_card = card.replace('*', "dark");
 
+        user_card = user_card.replace('*', "https://codeforces.com/profile/" + user.handle);
         user_card = user_card.replace('*', user.avatar);
         if (ind % 2) user_card = user_card.replace('*', "");
         else user_card = user_card.replace('*', "dark");

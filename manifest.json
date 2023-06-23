@@ -1,9 +1,8 @@
 {
     "background": {
-        "persistent": false,
-        "scripts": ["src/js/eventPage.js"]
+        "service_worker": "src/js/eventPage.js"
     },
-    "browser_action": {
+    "action": {
         "default_icon": "src/asset/icon16.png",
         "default_popup": "src/popup.html",
         "default_title": "CF Analytics"
@@ -23,12 +22,12 @@
 
     "description": "Analyse Codeforces profiles",
     "icons": {
-        "128": "src/asset/icon128.png",
         "16": "src/asset/icon16.png",
-        "48": "src/asset/icon48.png"
+        "48": "src/asset/icon48.png",
+        "128": "src/asset/icon128.png"
     },
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "CF Analytics",
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "0.2.0"
+    "version": "0.2.1"
 }

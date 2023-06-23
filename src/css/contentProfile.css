@@ -2,3 +2,13 @@
     background-color: transparent;
     text-decoration: none;
 }
+
+.flex-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#averageTaskLevel{
+    font-weight: bold;
+}

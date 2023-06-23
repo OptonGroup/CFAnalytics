@@ -22,6 +22,7 @@
     transition: .5s;
     width: 64px;
     height: 64px;
+    cursor: pointer;
 }
 
 .datatable .rated-user {

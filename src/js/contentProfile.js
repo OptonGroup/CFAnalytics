@@ -16,6 +16,8 @@ var verdictsChartLabel = [];
 var verdictsChartData = [];
 var languagesChartLabel = [];
 var languagesChartData = [];
+var countSolvedTasks = 0;
+var sumSolvedTasksLevels = 0;
 
 ratings[Symbol.iterator] = function*() {
     yield*[...ratings.entries()].sort((a, b) => {
@@ -207,6 +209,9 @@ function processData(resultArr) {
         ratingChartLabel.push(key);
         ratingChartData.push(val);
         ratingChartBackgroundColor.push(ratingBackgroundColor(key));
+
+        countSolvedTasks += val;
+        sumSolvedTasksLevels += key*val;
     }
     for (let [key, val] of levels) {
         // console.log(key + '-' + val);
@@ -241,6 +246,13 @@ function findProblemURL(contestId, index) {
 }
 
 function createProblemRatingChart() {
+    var averageTaskLevel = Math.round(sumSolvedTasksLevels / countSolvedTasks);
+    // console.log(averageTaskLevel);
+    var averageTaskLevelElement = document.getElementById('averageTaskLevel');
+    averageTaskLevelElement.innerText = averageTaskLevel;
+    averageTaskLevelElement.style.color = ratingBackgroundColor(averageTaskLevel);
+    
+
     var ctx = document.getElementById('problemRatingChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
