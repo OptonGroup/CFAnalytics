@@ -17,6 +17,11 @@
             "css": ["src/css/contentProfile.css"],
             "js": ["src/lib/jquery-3.6.0.min.js", "src/lib/chart.min.js", "src/js/contentProfile.js"],
             "matches": ["https://codeforces.com/profile/*"]
+        },
+        {
+            "css": [],
+            "js": ["src/lib/jquery-3.6.0.min.js", "src/js/groupsProblems.js"],
+            "matches": ["https://codeforces.com/group/*/contest/*/problem/*"]
         }
     ],
 
@@ -26,8 +31,8 @@
         "48": "src/asset/icon48.png",
         "128": "src/asset/icon128.png"
     },
-    "manifest_version": 3 ,
+    "manifest_version": 3,
     "name": "CF Analytics",
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "0.2.1"
+    "version": "0.2.2"
 }
